@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //对象属性
+    var person = {
+        name: 'John',
+        age: 31,
+        favColor: 'green',
+        height: 183
+    }
+    var x = person.age
+    var y = person['age']
+
+    //计算字符串的字符数
+    var course = { name: 'JS', lessons: 54 }
+    console.log(course.name.length)
+
+    //创建对象定义属性
+    var ourDog = {
+        name: 'Camper',
+        legs: 4,
+        tails: 1,
+        friends: ['everything!']
+    }
+    //两种更新属性的方法
+    ourDog.name = 'Happy Camper'
+    ourDog['name'] = 'Happy Camper'
+    //添加属性的方法
+    var ourDog = {
+        name: 'Camper',
+        legs: 4,
+        tails: 1,
+        friends: ['everything!']
+    }
+    ourDog.bark = 'bow-wow' //等价于 ourDog['bark'] = 'bow-wow';
+    //删除属性
+    var ourDog = {
+        name: 'Camper',
+        legs: 4,
+        tails: 1,
+        friends: ['everything!']
+    }
+    var c1 = ourDog['tails'] //c1等于1 
+    // 删除 tails 属性 
+    delete ourDog['tails'] //等价于delete ourDog.tails 
+    var c2 = ourDog['tails'] //c2 等于 undefined 
+    console.log(ourDog)
+
+    //来将文本转换为大写
+    var message = 'Hello world!';
+    var x = message.toUpperCase();
+
+    //用[]读取对象属性
+    var a = 'age'
+    var myObj = {
+        name: 'Loen',
+        age: '28',
+        eat: function () {
+            return "I'm eating"
+        }
+    }
+    console.log(myObj['name']) // Loen 
+    console.log(myObj[a]) // 可以用变量访问对象属性,返回 28 
+    console.log(myObj['eat']()) // 返回 I'm eating
+
+
+    //使用函数来构造对象
+    function person(firstname, lastname, age, eyecolor) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.eyecolor = eyecolor;
+    }
+    //创建对象实例
+    var myFather = new person('John', 'Doe', 50, 'blue')
+    var myMother = new person('Sally', 'Rally', 48, 'green')
+    console.log(myFather.age) // 输出50 
+    console.log(myMother.firstname) // 输出Sally
+
+
+    //对象初始化，用英文大括号 {} 创建单个对象
+    var John = {
+        name: 'John',
+        age: 25
+    }
+    var Loen = {
+        name: 'Loen',
+        age: 28
+    }
+
+    //创建对象函数
+    function person(name, age) { //在构造函数中定义方法
+        this.name = name
+        this.age = age
+        this.changeName = function (name) {
+            this.name = name
+        }
+    }
+    var p = new person('Loen', 28)
+    p.changeName('John')
+    //在构造函数外部定义一个函数
+    function person(name, age) {
+        this.name = name
+        this.age = age
+        this.yearOfBirth = bornYear // 关联 bornYear 函数 
+    }
+    function bornYear() {
+        return new Date().getFullYear() - this.age
+    }
+
+</script>
+
+</html>
