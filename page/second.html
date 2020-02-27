@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+    <title>second</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var x = '你好 JavaScript';
+    document.write(x);
+
+    // var x1 = 100;
+    // document.write(typeof X1);   // JavaScript是区分大小写所以输出为undefined
+
+
+    //字符串（string）
+    var hello = 'hello world'; 
+    //、数字（number）
+    var age = 21; 
+    //布尔（boolean）
+    var live = true; 
+    //空（null）
+    var girlfriend = null; 
+    //未定义（undefined）
+    var favsong = undefined; 
+    //对象（object）
+    var Car = { 'name': '奔驰', 'status': '漏油' };
+
+    //布尔（boolean）
+    var x = true; 
+    var y = false;
+
+    //数字
+    var x1=34.00; // 使用小数点来写 
+    var x2=34; // 不使用小数点来写 
+    // x1 与 x2 是完全相等的
+
+    //字符串(可以使用单引号或双引号)
+    var carname="Volvo XC60"; 
+    var carname='Volvo XC60';
+
+    var answer="It's alright"; 
+    var answer="He is called 'Loen'"; 
+    var answer='He is called "Loen"';
+
+    //用双引号括起来的字符串中，如果要包含双引号须使用反斜杠（\）转义处理字符串中的双引号
+    var sayHello = 'Hello! \'我是一名JavaScript程序员.\' '; 
+    document.write(sayHello);
+
+    //变量在未持有值的时候为 undefined
+    var a; 
+    typeof a; // "undefined" 
+    var b = 42; 
+    typeof b; // "number" 
+    b = a; 
+    typeof b; // "undefined"
+
+
+    //typeof 运算符的返回类型是字符串值
+    typeof undefined === "undefined" // true 
+    typeof true === "boolean" // true 
+    typeof 42 === "number" // true 
+    typeof "42" === "string" // true 
+    typeof {lift: 42} === "object" // true 
+    // ES6中新加入的Symbol类型 
+    typeof Symbol() === "symbol" // true
+</script>
+
+</html>
