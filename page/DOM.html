@@ -1,0 +1,186 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {
+        width: 600px;
+        height: 400px;
+        background: rgb(170, 199, 170);
+        position: relative;
+    }
+
+    #box {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 144, 144);
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="box">
+
+        </div>
+        <div class="demo">
+            <span class="demo">Hi I'm Loen!<< /span>
+        </div>
+        <p class="demo">This is a paragraph</p>
+        <p>hi</p>
+        <p>hello</p>
+        <p>hi</p>
+    </div>
+</body>
+<script>
+    
+    //getElementsByTagName 方法
+    var arr = document.getElementsByTagName("p");
+    for (var x = 0; x < arr.length; x++) {
+        arr[x].innerHTML = "Hi there";
+    }
+
+
+    //move定时器
+    // 定义开始的位置 
+    var pos = 0;
+    // 获取box元素 
+    var box = document.getElementById("box");
+    function move() {
+        pos += 1;
+        box.style.left = pos + "px"; //px = pixels
+    }
+
+    var pos = 0; // 盒子元素
+    var box = document.getElementById("box");
+    var t = setInterval(move, 10);
+    function move() {
+        if (pos >= 540) {
+            clearInterval(t);
+        }
+        else {
+            pos += 1;
+            box.style.left = pos + "px";
+        }
+    }
+
+
+    //选择元素
+    document.getElementById(id)  //通过 id 找元素 
+    document.getElementsByClassName(name) //通过 类 找元素
+    document.getElementsByTagName(name) //通过 标签 找元素
+
+    //用于选择 id="demo" 的元素并更改其内容
+    var elem = document.getElementById("demo");
+    elem.innerHTML = "Hello World";
+
+    var arr = document.getElementsByClassName("demo"); //访问第二个元素
+    arr[1].innerHTML = "Hi I am Peter";
+
+
+
+
+</script>
+
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <p>一些文本</p>
+        <p>另一些文本 </p>
+        <img id="my-img" src="1.jpg" alt="" />
+
+        <a href="http://www.baidu.com">百度</a>
+
+        <div id="demo" style="width:200px">一些文本</div> 
+    </div>
+</body>
+<script>
+    var a = document.getElementById("demo");
+    var arr = a.childNodes;
+    for (var x = 0; x < arr.length; x++) {
+        arr[x].innerHTML = "新的文本";
+    }
+
+    //更改图像的src属性
+    var el = document.getElementById("my-img"); // 通过id="my-img"获取元素
+    el.src = "2.jpg";
+
+    //更改链接的href属性
+    var el = document.getElementsByTagName("a");
+    el[0].href = "https://www.google.cn";
+    el[0].innerHTML = "google";
+
+
+    //改变样式
+    var x = document.getElementById("demo"); 
+    x.style.color = "6600FF"; 
+    x.style.width = "100px";
+
+
+    //document.createTextNode(text) 创建一个新的文本节点
+    var node = document.createTextNode("一些新的文本");
+</script>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">一些文本</div>
+
+    <p id="p1">这是一个段落.</p>
+    <p id="p2">这是另外一个段落.</p>
+
+
+</body>
+<script>
+    //创建一个新的段落 
+    var p = document.createElement("p");
+    var node = document.createTextNode("一些新的文本");
+    //添加文本到段落
+    p.appendChild(node);
+    var div = document.getElementById("demo");
+    //将段落添加到div中
+    div.appendChild(p);
+
+    //移除元素
+    var parent = document.getElementById("demo");
+    var child = document.getElementById("p1");
+    parent.removeChild(child);
+
+
+    //替换元素
+    var p = document.createElement("p");
+    var node = document.createTextNode("这是新的文本");
+    p.appendChild(node);
+    var parent = document.getElementById("demo");
+    var child = document.getElementById("p1");
+    parent.replaceChild(p, child);
+
+</script>
+
+</html>

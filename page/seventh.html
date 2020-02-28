@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    var d = new Date();
+    var hours = d.getHours();//hours 等于当前的小时数值
+
+    function printTime() {
+        var d = new Date();
+        var hours = d.getHours();
+        var mins = d.getMinutes();
+        var secs = d.getSeconds();
+        document.body.innerHTML = hours + ":" + mins + ":" + secs;
+    } setInterval(printTime, 1000); // setInterval 第二个参数单位是 毫秒
+
+
+
+
+
+
+
+
+
+
+    // data();
+    // {
+    //     return {
+    //         //json数组实例
+    //         "sites":
+    //             [
+    //                 { "name": "baidu", "url": "www.baidu.com" },
+    //                 { "name": "Google", "url": "www.google.com" },
+    //                 { "name": "Taobao", "url": "www.taobao.com" }
+    //             ],
+
+    //         //json数据
+    //         "name": "JavaScript"
+
+    //     },
+    //     {
+    //         "name": "baidu", "url": "www.baidu.com"
+    //     }
+    // }
+
+    //JSON.parse() 方法
+    var text = '{"employees":[' +
+        '{"name":"baidu","site":"http://www.baidu.com" },' +
+        '{"name":"Google","site":"http://www.Google.com" },' +
+        '{"name":"Taobao","site":"http://www.taobao.com" }]}';
+    obj = JSON.parse(text);
+    document.getElementById("demo").innerHTML =
+        obj.employees[1].name + " " + obj.employees[1].site;
+
+    //实例
+    JSON.parse('{"p": 5, "s": 1.5, "t": -3}', function (k, v) {
+        if (k === '') return v; // 如果到了最顶层，则直接返回属性值， 
+        return v * 2; // 否则将属性值变为原来的 2 倍。
+    }); // {"p": 10, "s": 3, "t": -6}
+
+
+
+    //JSON.parse() 不允许用逗号作为结尾，以下均抛出动态错误 
+    JSON.parse("[1, 2, 3, 4, ]");
+    JSON.parse('{"foo" : 1, }');
+
+    //JSON.stringify() 方法
+    var str = { "name": "baidu", "site": "http://www.baidu.com" }
+    str_pretty1 = JSON.stringify(str)
+    document.write("只有一个参数情况：");
+    document.write("<br>");
+    document.write("<pre>" + str_pretty1 + "</pre>");
+    document.write("<br>");
+    str_pretty2 = JSON.stringify(str, null, 4) //使用四个空格缩进
+    document.write("使用参数情况：");
+    document.write("<br>");
+    document.write("<pre>" + str_pretty2 + "</pre>"); // pre 用于格式化输出
+
+
+
+
+
+
+
+
+
+    //创建对象的方法
+    var txt = new String("string");
+    var txt = "string";
+
+    //对象的方法
+    var str = "Hello, Nier"; var a = str.toLowerCase(); // 把字符串转为小写 
+    var b = str.toUpperCase(); // 吧字符串转为大写 
+    var c = " Hello world ".trim() //去掉字符串两边的空白 
+    var str = "Hello world, welcome to the w3cschool.";
+    var n = str.indexOf("welcome"); // 13 
+    var c = str.indexOf("loen"); // -1 
+    var str = "Mr Blue has a blue house and a blue car and a blue hat";
+
+    // 将字符串中首次出现的blue替换成red 
+    var n = str.replace("blue", "red"); //Mr Blue has a red house and a blue car and a blue hat 
+    // 用正则匹配字符串中所有出现的blue并替换成red 
+    var c = str.replace(/blue/g, "red"); //Mr red has a red house and a red car and a red hat 
+    var str = "Hello world!"; document.write(str.substring(3) + "<br>");
+    document.write(str.substring(3, 7));
+
+
+    //Window对象属性
+    var winInnerHeight = window.innerHeight; //返回窗口的文档显示区的高度。 
+    var winInnerWidth = window.innerWidth; //返回窗口的文档显示区的宽度。
+    var winOuterWidth = window.outerWidth; // 返回窗口的外部宽度，包含工具条与滚动条。
+    var winOuterHeight = window.outerHeight; // 返回窗口的外部高度，包含工具条与滚动条。
+    var winScreenLeft = window.screenLeft; // 返回相对于屏幕窗口的x坐标 
+    var winScreenTop = window.screenTop; // 返回相对于屏幕窗口的y坐标
+
+    //圆周率PI
+    document.write(Math.PI); // 输出3.141592653589793
+
+
+    //计算一个数的平方根
+    var n = prompt("请输入一个数字:", "");
+    var answer = Math.sqrt(n);
+    alert("数字" + n + " 的平方根是: " + answer);
+
+    //返回介于 0（包含） ~ 1（不包含）
+    Math.random()
+
+
+    //返回一个数字四舍五入后最接近的整数
+    x = Math.round(20.49); //20 
+    x = Math.round(20.5); //21 
+    x = Math.round(-20.5); //-20 
+    x = Math.round(-20.51); //-21
+
+
+
+    //floor方法
+    Math.floor(45.95); // 45 
+    Math.floor(45.05); // 45 
+    Math.floor(4); // 4 
+    Math.floor(-45.05); // -46
+    Math.floor(-45.95); // -46
+
+    //获取当前时间
+    var d = new Date();
+
+    new Date(milliseconds) // 毫秒 
+    new Date(dateString) // 日期字符串 
+    new Date(year, month, day, hours, minutes, seconds, milliseconds) //年，月，日， 时，分，秒和毫秒
+
+    //Fri Jan 02 1970 08:00:00 GMT+0800 (中国标准时间) 
+    var d1 = new Date(86400000);
+    //Thu Oct 19 2017 15:56:00 GMT+0800 (中国标准时间) 
+    var d2 = new Date("October 19, 2017 15:56:00");
+    //Sat Jun 11 1988 11:42:00 GMT+0800 (中国标准时间) 
+    var d3 = new Date(88, 5, 11, 11, 42, 0, 0);
+
+
+    //Window对象方法
+    alert("hello world");
+    // 等价于 
+    window.alert('hello world');
+
+    function open_win() {
+        window.open("http://www.baidu.com");
+    }
+
+    function openWin() {
+        myWindow = window.open('', '', 'width=200,height=100');
+        myWindow.document.write("<p>这是'我的窗口'</p>");
+        myWindow.focus();
+    }
+
+    //setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式
+    var myWindow = window.open("", "", "width=200, height=100");
+    myWindow.document.write("<p>这是一个新窗口'</p>");
+    setTimeout(function () {
+        myWindow.close()
+    }, 3000);
+
+    // clearTimeout() 来阻止函数的执行
+    var myVar;
+    function myFunction() {
+        myVar = setTimeout(function () {
+            alert("Hello")
+        }, 3000);
+    }
+
+    function myStopFunction() {
+        clearTimeout(myVar);
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>
